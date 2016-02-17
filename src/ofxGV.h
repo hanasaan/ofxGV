@@ -20,9 +20,8 @@ namespace ofxGV
     }
     
     inline rotation_t toGV(ofQuaternion q) {
-        Quaterniond eq(q.x(), q.y(), q.z(), q.w());
-        rotation_t m(eq);
-        return m;
+        Quaterniond eq(q.w(), q.x(), q.y(), q.z());
+        return eq.matrix();
     }
     
     inline transformation_t toGV(ofMatrix4x4 m) {
